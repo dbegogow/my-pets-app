@@ -6,13 +6,13 @@ const Content = styled.div`
     background-position-x: center;
     background-position-y: center;
     background-size: 65%;
-    height: 85vh;
+    height: 95vh;
 `;
 
 const Title = styled.h1`
     text-align: center;
     font-size: 45px;
-    padding-top: 4%;
+    padding-top: 6%;
 `;
 
 const Home = () => {

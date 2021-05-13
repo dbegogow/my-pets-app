@@ -4,13 +4,14 @@ import CategoryButton from './CategoryButton';
 
 const Content = styled.div`
     background: #98BEBB;
-    height: 88vh;
+    min-height: 88vh;
 `;
 
 const Title = styled.h1`
     margin: 0;
-    padding-top: 4%;
+    padding-top: 6%;
     text-align: center;
+    font-size: 45px;
 `;
 
 const ButtonsWrapper = styled.div`
