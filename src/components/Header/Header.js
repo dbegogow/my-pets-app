@@ -1,15 +1,19 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
     background: #341978;
+    width: 100%;
     height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 `;
 
-const Button = styled.button`
+const NavigateButton = styled(Link)`
     background: #3BD2CD;
+    color: #1C2D66;
+    font-weight: 600;
     border-radius: 12px;
     padding: 10px;
     border: 3px solid #9DE481;
@@ -25,7 +29,7 @@ const Header = (props) => {
     return (
         <Wrapper>
             <Title>Wellcome to Home Page</Title>
-            <Button>Go to Dashboard</Button>
+            <NavigateButton to="/dashboard">Go to Dashboard</NavigateButton>
         </Wrapper>
     );
 };
