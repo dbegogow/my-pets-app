@@ -6,7 +6,7 @@ const Content = styled.div`
     background-position-x: center;
     background-position-y: center;
     background-size: 65%;
-    height: 88vh;
+    height: 85vh;
 `;
 
 const Title = styled.h1`
