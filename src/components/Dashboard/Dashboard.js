@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { getRabbits } from '../../services/getAnimals';
 import styled from 'styled-components';
 import Article from './Article';
 import CategoryButton from './CategoryButton';
@@ -25,9 +27,18 @@ const ArticlesWrapper = styled.article`
     margin-top 6%;
     justify-content: center;
     flex-wrap: wrap;
+            <ButtonsWrapper>
 `;
 
 const Dashboard = () => {
+    const [state, setState] = useState({});
+
+    useEffect(() => {
+        getRabbits().then(res => setState(res));
+    }, {});
+
+    console.log(state);
+
     return (
         <Content>
             <Title>Dashboard</Title>
@@ -39,14 +50,7 @@ const Dashboard = () => {
                 <CategoryButton category="fishes">Fishes</CategoryButton>
             </ButtonsWrapper>
             <ArticlesWrapper>
-                <Article name="Marcy" category="Rabbit" image="https://www.scottishspca.org/sites/default/files/styles/full_content/public/2019-09/Rabbit%20860x500.jpeg?itok=OvX2YuHA">Marcy is 2 years old and it is the best bunny!</Article>
-                <Article name="Topcho" category="Rabbit" image="https://www.naturepl.com/cache/pcache2/01571568.jpg">Topcho is sweet male bunny!</Article>
-                <Article name="Marcy" category="Rabbit" image="https://www.scottishspca.org/sites/default/files/styles/full_content/public/2019-09/Rabbit%20860x500.jpeg?itok=OvX2YuHA">Marcy is 2 years old and it is the best bunny!</Article>
-                <Article name="Topcho" category="Rabbit" image="https://www.naturepl.com/cache/pcache2/01571568.jpg">Topcho is sweet male bunny!</Article>
-                <Article name="Marcy" category="Rabbit" image="https://www.scottishspca.org/sites/default/files/styles/full_content/public/2019-09/Rabbit%20860x500.jpeg?itok=OvX2YuHA">Marcy is 2 years old and it is the best bunny!</Article>
-                <Article name="Topcho" category="Rabbit" image="https://www.naturepl.com/cache/pcache2/01571568.jpg">Topcho is sweet male bunny!</Article>
-                <Article name="Marcy" category="Rabbit" image="https://www.scottishspca.org/sites/default/files/styles/full_content/public/2019-09/Rabbit%20860x500.jpeg?itok=OvX2YuHA">Marcy is 2 years old and it is the best bunny!</Article>
-                <Article name="Topcho" category="Rabbit" image="https://www.naturepl.com/cache/pcache2/01571568.jpg">Topcho is sweet male bunny!</Article>
+
             </ArticlesWrapper>
         </Content>
     );
