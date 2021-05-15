@@ -31,13 +31,11 @@ const ArticlesWrapper = styled.article`
 `;
 
 const Dashboard = () => {
-    const [state, setState] = useState({});
+    const [state, setState] = useState([]);
 
     useEffect(() => {
         getRabbits().then(res => setState(res));
-    }, {});
-
-    console.log(state);
+    }, []);
 
     return (
         <Content>
@@ -50,7 +48,18 @@ const Dashboard = () => {
                 <CategoryButton category="fishes">Fishes</CategoryButton>
             </ButtonsWrapper>
             <ArticlesWrapper>
-
+                {state.map(x => {
+                    return (
+                        <Article
+                            key={x.id}
+                            category={x.category}
+                            image={x.image}
+                            name={x.name}
+                        >
+                            {x.description}
+                        </Article>
+                    );
+                })}
             </ArticlesWrapper>
         </Content>
     );
