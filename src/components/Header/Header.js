@@ -31,8 +31,8 @@ const Header = (props) => {
     return (
         <Wrapper>
             <Title>Wellcome to Home Page</Title>
-            <NavigateButton to="/dashboard">Go to Dashboard</NavigateButton>
-        </Wrapper>
+            <NavigateButton to={props.path}>Go to {props.navigationButtonContent}</NavigateButton>
+        </Wrapper >
     );
 };
 

@@ -8,13 +8,18 @@ import Dashboard from './components/Dashboard';
 function App() {
   return (
     <div className="App">
-      <Header />
       <Switch>
         <Route path="/" exact>
           <Redirect to="/home" />
         </Route>
-        <Route path="/home" component={Home} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/home">
+          <Header path="/dashboard" navigationButtonContent="Dashboard" />
+          <Home />
+        </Route>
+        <Route path="/dashboard">
+          <Header path="/home" navigationButtonContent="Home" />
+          <Dashboard />
+        </Route>
       </Switch>
       <Footer />
     </div>
