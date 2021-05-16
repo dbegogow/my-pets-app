@@ -1,8 +1,7 @@
 import api from './api';
 
-export const getRabbits = () => {
-
-    return fetch(api.rabbits)
+const getAnimals = (animals) => {
+    return fetch(api[animals])
         .then(res => res.json())
         .then(res => Object.entries(res).map(x => {
             return {
@@ -15,3 +14,5 @@ export const getRabbits = () => {
         }))
         .catch(err => console.log('Handle error: ' + err));
 };
+
+export default getAnimals;

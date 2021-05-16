@@ -8,10 +8,11 @@ const Button = styled.button`
     border-radius: 9px;
     border: 3px solid #77B638;
     margin-right: 20px;
+    cursor: pointer;
 `;
 
 const CategoryButton = (props) => {
-    return <Button>{props.children}</Button>
+    return <Button onClick={props.clickHandler}>{props.children}</Button>
 };
 
 export default CategoryButton;

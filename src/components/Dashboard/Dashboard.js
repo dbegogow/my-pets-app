@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getRabbits } from '../../services/getAnimals';
+import getAnimals from '../../services/getAnimals';
 import styled from 'styled-components';
 import Article from './Article';
 import CategoryButton from './CategoryButton';
@@ -34,18 +34,22 @@ const Dashboard = () => {
     const [state, setState] = useState([]);
 
     useEffect(() => {
-        getRabbits().then(res => setState(res));
+        loadindAnimals('rabbits');
     }, []);
+
+    function loadindAnimals(animals) {
+        getAnimals(animals).then(res => setState(res));
+    }
 
     return (
         <Content>
             <Title>Dashboard</Title>
             <ButtonsWrapper>
-                <CategoryButton category="rabbits">Rabbits</CategoryButton>
-                <CategoryButton category="cats">Cats</CategoryButton>
-                <CategoryButton category="pony">Ponies</CategoryButton>
-                <CategoryButton category="ducks">Ducks</CategoryButton>
-                <CategoryButton category="fishes">Fishes</CategoryButton>
+                <CategoryButton clickHandler={() => loadindAnimals('rabbits')}>Rabbits</CategoryButton>
+                <CategoryButton clickHandler={() => loadindAnimals('cats')}>Cats</CategoryButton>
+                <CategoryButton clickHandler={() => loadindAnimals('pony')}>Ponies</CategoryButton>
+                <CategoryButton clickHandler={() => loadindAnimals('ducks')}>Ducks</CategoryButton>
+                <CategoryButton clickHandler={() => loadindAnimals('fishes')}>Fishes</CategoryButton>
             </ButtonsWrapper>
             <ArticlesWrapper>
                 {state.map(x => {
