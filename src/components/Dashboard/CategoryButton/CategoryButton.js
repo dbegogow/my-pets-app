@@ -9,6 +9,9 @@ const Button = styled.button`
     border: 3px solid #77B638;
     margin-right: 20px;
     cursor: pointer;
+    &:hover {
+        background: #C7C937;
+    }
 `;
 
 const CategoryButton = (props) => {

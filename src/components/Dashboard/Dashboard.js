@@ -6,7 +6,7 @@ import CategoryButton from './CategoryButton';
 
 const Content = styled.div`
     background: #98BEBB;
-    min-height: 88vh;
+    min-height: 95vh;
 `;
 
 const Title = styled.h1`
